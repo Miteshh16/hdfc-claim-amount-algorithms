@@ -1,8 +1,10 @@
 package Algos;
+import Exception.InvalidWindowException;
 
 public class SlidingWindowMax {
 
-    public void getMax(int[] arr,int k){
+    public void getMax(int[] arr,int k)throws InvalidWindowException{
+        if(k<0 || k> arr.length) throw new InvalidWindowException("Provide a valid window");
         int sum=0;
         for(int i=0;i<k;i++){
             sum+=arr[i];

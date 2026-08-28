@@ -14,7 +14,7 @@ public class ClaimAmountStore {
         size = 0;
     }
 
-    public void add(int amount) {
+    public void add(int amount) throws StoreFullException {
         if (size == data.length) {
             throw new StoreFullException("Store is full");
         }
@@ -23,7 +23,7 @@ public class ClaimAmountStore {
         size++;
     }
 
-    public int insert(int index, int amount) {
+    public int insert(int index, int amount) throws IndexInvalidException{
         if (index < 0 || index > size) {
             throw new IndexInvalidException("Invalid index");
         }

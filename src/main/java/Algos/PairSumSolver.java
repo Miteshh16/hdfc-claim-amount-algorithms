@@ -1,10 +1,11 @@
 package Algos;
 
 import java.util.Arrays;
+import Exception.PairNotFoundException;
 
 public class PairSumSolver {
 
-    public int[] pairSumNested(int[] arr, int target){
+    public int[] pairSumNested(int[] arr, int target)throws PairNotFoundException{
         for(int i=0;i< arr.length;i++){
             for(int j=i+1;j<arr.length;j++){
                 if(target==arr[i]+arr[j]) return new int[]{arr[i],arr[j]};
@@ -26,6 +27,6 @@ public class PairSumSolver {
                 j--;
             }
         }
-        return new int[]{};
+        throw new PairNotFoundException("Pair Not found");
     }
 }
